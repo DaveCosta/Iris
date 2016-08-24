@@ -15,7 +15,7 @@ $(BINDIR) :
 
 ###########################################################
 
-.PHONY : clean pyrun
+.PHONY : clean sync pyrun
 
 clean :
 	@rm -rf $(BINDIR) 
@@ -25,3 +25,5 @@ clean :
 pyrun : src/main/python/Example01.py
 	@spark-submit $<
     
+sync :
+	@git push -u origin master
