@@ -15,10 +15,13 @@ $(BINDIR) :
 
 ###########################################################
 
-.PHONY : clean
+.PHONY : clean pyrun
 
 clean :
 	@rm -rf $(BINDIR) 
 	@find . -name ".DS_STORE" | xargs rm -f
 	@find . -name "*~" | xargs rm -f
-	
+
+pyrun : src/main/python/Example01.py
+	@spark-submit $<
+    
