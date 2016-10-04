@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+apply plugin:'application'
+mainClassName = "org.mephys.iris.Example01"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies{
+    compile "org.apache.spark:spark-core_2.11:2.0.0"
+}
+
+task hello {
+    doLast {
+        println 'Hello world!'
+    }
+}
+
