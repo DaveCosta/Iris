@@ -24,7 +24,7 @@ clean :
 
 cleandeep :
 	@rm -rf .classpath .gradle .idea .project .settings
-	@rm -rf project build target
+	@rm -rf project build target *.iml
 
 pyrun : src/main/python/Example01.py
 	@spark-submit $<

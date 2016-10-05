@@ -1,4 +1,3 @@
-.gitignore
 build/
 .idea/
 target/
@@ -9,4 +8,4 @@ out/
 .gradle/
 .settings
 src/.DS_Store
-
+*.iml
