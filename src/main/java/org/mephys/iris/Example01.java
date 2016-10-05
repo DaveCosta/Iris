@@ -13,6 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+<<<<<<< HEAD
+=======
+
+>>>>>>> d62d3b8edb06db56ce3288b4cbaaacb32563e924
 package org.mephys.iris;
 
 import org.apache.spark.SparkConf;
