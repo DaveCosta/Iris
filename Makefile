@@ -15,7 +15,11 @@ $(BUILDDIR) :
 
 ###########################################################
 
+<<<<<<< HEAD
 .PHONY : clean cleandeep sync pyrun scrun jvmrun
+=======
+.PHONY : clean sync pyrun scrun jvmrun
+>>>>>>> e4ba7dc64c7c35a7b67903e858b6bbe21687887e
 
 clean :
 	@rm -rf $(BUILDDIR) 
