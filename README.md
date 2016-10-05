@@ -1,6 +1,6 @@
 ## Synopsis
 
-This is a set of examples that demonstrate the use of Apache Spark on the Iris Plants Database from R.A. Fisher.
+This is a set of examples that demonstrate the use of Apache Spark on the Iris Plants Database from R.A. Fisher. The project is done in Scala.
 
 ## Motivation
 
