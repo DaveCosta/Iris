@@ -1,4 +1,4 @@
-apply plugin: 'java'
+apply plugin: 'jscala'
 
 apply plugin:'application'
 mainClassName = "org.mephys.iris.Example01"
