@@ -1,3 +1,7 @@
+# Iris
+
+An Apache Spark example using Tree-decision MLlib routines. 
+
 ## Synopsis
 
 This is a set of examples that demonstrate the use of Apache Spark on the Iris Plants Database from R.A. Fisher. The project is done in Scala.
