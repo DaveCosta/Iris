@@ -1,5 +1,4 @@
 # Iris
-
 An Apache Spark example using Tree-decision MLlib routines. 
 
 ## Synopsis
