@@ -8,10 +8,21 @@ BUILDDIR=target/make
 
 ###########################################################
 
-main : $(BUILDDIR)
+main : $(BUILDDIR) run.sh
 
 $(BUILDDIR) : 
 	@mkdir -p $@
+
+
+###########################################################
+
+run.sh : 
+	@echo sbt package > $@
+	@echo "spark-submit \\" >> $@
+	@echo "--class "org.mephys.sc.iris.Iris" \\" >> $@
+	@echo "--master local[2] \\" >> $@
+	@echo "target/scala-2.11/iris_2.11-0.1.jar" >> $@
+	@chmod u+x $@
 
 ###########################################################
 

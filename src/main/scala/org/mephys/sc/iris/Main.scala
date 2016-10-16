@@ -66,7 +66,8 @@ object Example01 {
       element =>
       println(element.label + "=" + model.predict(element.features))
     }
-  
+
+println("Learned classification tree model:\n" + model.toDebugString)
     
   }
 }
