@@ -28,7 +28,7 @@ import org.apache.spark.mllib.linalg.{ Vector, Vectors }
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-object Example01 {
+object Main {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("org.mephys.sc.iris.Example01")
     val sc = new SparkContext(conf)
@@ -66,7 +66,8 @@ object Example01 {
       element =>
       println(element.label + "=" + model.predict(element.features))
     }
-  
+
+println("Learned classification tree model:\n" + model.toDebugString)
     
   }
 }
