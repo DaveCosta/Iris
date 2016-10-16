@@ -28,7 +28,8 @@ import org.apache.spark.mllib.linalg.{ Vector, Vectors }
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 
-object DecisionTree {
+object Iris {
+
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("org.mephys.sc.iris.Example01")
     val sc = new SparkContext(conf)
@@ -44,7 +45,7 @@ object DecisionTree {
         case _ => -1.0 // should never occur
       }, Vectors.dense(v(0).toDouble, v(1).toDouble, v(2).toDouble, v(3).toDouble))
     }
-    
+
     val Array(data, test) = rdd.randomSplit(Array(0.8,0.2))
 
     // Count
