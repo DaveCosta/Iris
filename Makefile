@@ -5,28 +5,33 @@
 ### Updated: 05/10/2016
 
 BUILDDIR=target/make
+JARPROJECT=target/scala-2.11/iris_2.11-0.1.jar
 
 ###########################################################
 
-main : $(BUILDDIR) run.sh
+main :  $(JARPROJECT) run.sh #$(BUILDDIR)
+
+$(JARPROJECT): $(shell find -E . -iregex ".*\.(java|scala)")
+	@sbt package
 
 $(BUILDDIR) : 
 	@mkdir -p $@
 
-
 ###########################################################
+
+SOURCE =
 
 run.sh : 
 	@echo sbt package > $@
 	@echo "spark-submit \\" >> $@
-	@echo "--class "org.mephys.sc.iris.Iris" \\" >> $@
-	@echo "--master local[2] \\" >> $@
-	@echo "target/scala-2.11/iris_2.11-0.1.jar" >> $@
+	@echo "   --class "org.mephys.sc.iris.Iris" \\" >> $@
+	@echo "   --master local[2] \\" >> $@
+	@echo "   target/scala-2.11/iris_2.11-0.1.jar" >> $@
 	@chmod u+x $@
 
 ###########################################################
 
-.PHONY : clean cleandeep sync pyrun scrun jvmrun
+.PHONY : clean cleandeep run sync pyrun scrun jvmrun source
 
 
 clean :
@@ -37,6 +42,12 @@ clean :
 cleandeep :
 	@rm -rf .classpath .gradle .idea .project .settings
 	@rm -rf project build target *.iml
+
+run : 
+	@run.sh
+
+source :
+	@echo $(shell find -E . -iregex ".*\.(java|scala)")
 
 pyrun : src/main/python/Example01.py
 	@spark-submit $<
