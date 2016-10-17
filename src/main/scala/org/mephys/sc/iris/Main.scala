@@ -35,6 +35,5 @@ object Main {
 
     val lines = sc.textFile("src/main/resources/iris.data")
 
-
   }
 }
